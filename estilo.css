@@ -1,0 +1,36 @@
+body{
+	background:#D6E0E3; 
+}
+
+
+#datos	{border:1px solid #ccc;
+	     padding:10px;
+	     width: 70%;
+         border: 2px solid;
+         border-collapse: collapse;
+         
+	    }
+		
+ tr td {
+border: 2px solid;
+ 
+}
+#datos tr th{
+	border: 2px solid;
+	background-color: gray;
+}
+td{
+	height: 30px;
+	width: 40px;
+	text-align: center;
+}
+
+.color{
+	background-color: #BDD8E0;
+}
+tr td:hover{
+	background : #63ABC1;
+}
+.buscar{
+	font-family: "Times New Roman";
+}

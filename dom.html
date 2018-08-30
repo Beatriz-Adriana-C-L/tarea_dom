@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<link rel="stylesheet" href="estilo.css">
+	<title>Buscar elementos de una tabla</title>
+	<script language="javascript">
+		function doSearch()
+		{
+			var tableReg = document.getElementById('datos');
+			var searchText = document.getElementById('searchTerm').value.toLowerCase();
+			var cellsOfRow="";
+			var found=false;
+			var compareWith="";
+ 
+			for (var i = 1; i < tableReg.rows.length; i++)
+			{
+				cellsOfRow = tableReg.rows[i].getElementsByTagName('td');
+				found = false;
+				
+				for (var j = 0; j < cellsOfRow.length && !found; j++)
+				{
+					compareWith = cellsOfRow[j].innerHTML.toLowerCase();
+		
+					if (searchText.length == 0 || (compareWith.indexOf(searchText) > -1))
+					{
+						found = true;
+					}
+				}
+				if(found)
+				{
+					tableReg.rows[i].style.display = '';
+				} else {
+	
+					tableReg.rows[i].style.display = 'none';
+				}
+			}
+		}
+	</script>
+ 
+	
+</head>
+ 
+<body>
+	<center>
+	<h1>Buscar en el contenido de una tabla</h1>
+	<form>
+		<div class="derecha" id="buscar">Cadena a buscar <input id="searchTerm" class="ligh-table-filter "placeholder="filtro" type="search" data-table="order-table" onkeyup="doSearch()" />
+
+		
+	</form>
+	</center>
+	<center>
+	<p>
+		<table id="datos">
+			<tr ">
+				<th>ID</th><th >Articulo</th> <th>U.M</th> <th>peso</th> <th>Existencia</th> <th>Expira</th> <th>Precio de Compra</th> <th>Precio de Venta</th>
+			</tr>
+			<tr>
+				<td>1</td><td >Pasta</td><td>KG</td><td>2</td><td id="ver">20</td><td>10/09/2018</td><td>80</td><td>85.50</td>
+			</tr>
+			<tr class="color">
+				<td>2</td><td>Azucar</td><td>KG</td><td>5</td><td>36</td><td>23/09/2018</td><td>12</td><td>15</td>
+			</tr>
+			<tr >
+				<td>3</td><td>Queso</td><td>LB</td><td>3</td><td>45</td><td>Sin_Limite</td><td>60</td><td>70</td>
+			</tr>
+			<tr class="color">
+				<td>4</td><td>Leche</td><td>LT</td><td>6</td><td>60</td><td>13/12/2020</td><td>18</td><td>22</td>
+			</tr>
+			<tr >
+				<td>5</td><td>Jabon</td><td>UND</td><td>2</td><td>45</td><td>8/01/2021</td><td>20</td><td>25</td>
+			</tr>
+			<tr class="color">
+				<td>6</td><td>Desinfectante</td><td>UND</td><td>2</td><td>60</td><td>03/04/2019</td><td>30</td><td>36</td>
+			</tr>
+			<tr >
+				<td>7</td><td>Maruchan</td><td>UND</td><td>9</td><td>120</td><td>18/11/2020</td><td>15</td><td>18</td>
+			</tr >
+			<tr class="color">
+				<td>8</td><td>Papas</td><td>LB</td><td>10</td><td>90</td><td>SIN_LIMITE</td><td>12</td><td>15</td>
+			</tr>
+			<tr >
+				<td>9</td><td>Bolsas</td><td>UND</td><td>4</td><td>128</td><td>05/03/2019</td><td>2</td><td>4</td>
+			</tr>
+			<tr class="color">
+				<td>10</td><td>Cafè</td><td>UND</td><td>7</td><td>92</td><td>04/10/2020</td><td>4</td><td>5</td>
+			</tr>
+			<tr >
+				<td>11</td><td>Cremora</td><td>UND</td><td>2</td><td>120</td><td>07/04/2019</td><td>1</td><td>2</td>
+			</tr>
+		</table>
+	</p>
+	</center>
+</body>
+</html
